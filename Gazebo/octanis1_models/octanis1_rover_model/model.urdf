@@ -1,0 +1,230 @@
+<?xml version="1.0" ?>
+<robot name="octanis1_rover_model">
+  <joint name="octanis1_rover_model__left_strut_out_hinge" type="fixed">
+    <parent link="octanis1_rover_model__left_strut_out"/>
+    <child link="octanis1_rover_model__rover_body"/>
+    <origin rpy="0     -1.5707  0" xyz="0    -0.172 -0.02"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="octanis1_rover_model__left_strut_in_hinge" type="fixed">
+    <parent link="octanis1_rover_model__left_strut_in"/>
+    <child link="octanis1_rover_model__rover_body"/>
+    <origin rpy="-2.03444 -1.57058 -1.10714" xyz="0      -0.17199 -0.03523"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="octanis1_rover_model__left_wheel_in_hinge" type="fixed">
+    <parent link="octanis1_rover_model__left_wheel_in"/>
+    <child link="octanis1_rover_model__left_strut_in"/>
+    <origin rpy="3.1414 -1.5707  0" xyz="0.1852  -0.172    0.07499"/>
+    <axis xyz="0  0  1"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="octanis1_rover_model__left_wheel_out_hinge" type="fixed">
+    <parent link="octanis1_rover_model__left_wheel_out"/>
+    <child link="octanis1_rover_model__left_strut_out"/>
+    <origin rpy="0      1.5707  0" xyz="0.17   0.172  0.075"/>
+    <axis xyz="0  0  1"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="octanis1_rover_model__right_strut_out_hinge" type="fixed">
+    <parent link="octanis1_rover_model__right_strut_out"/>
+    <child link="octanis1_rover_model__rover_body"/>
+    <origin rpy="0      1.5707  0" xyz="0    -0.172 -0.02"/>
+    <axis xyz="-1  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="octanis1_rover_model__right_strut_in_hinge" type="fixed">
+    <parent link="octanis1_rover_model__right_strut_in"/>
+    <child link="octanis1_rover_model__rover_body"/>
+    <origin rpy="-2.03444  1.57058  1.10714" xyz="0      -0.17199 -0.03523"/>
+    <axis xyz="1  0  0"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="octanis1_rover_model__right_wheel_in_hinge" type="fixed">
+    <parent link="octanis1_rover_model__right_wheel_in"/>
+    <child link="octanis1_rover_model__right_strut_in"/>
+    <origin rpy="3.1414  1.5707  0" xyz="-0.1852  -0.172    0.07499"/>
+    <axis xyz="0  0  1"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <joint name="octanis1_rover_model__right_wheel_out_hinge" type="fixed">
+    <parent link="octanis1_rover_model__right_wheel_out"/>
+    <child link="octanis1_rover_model__right_strut_out"/>
+    <origin rpy="0     -1.5707  0" xyz="-0.17   0.172  0.075"/>
+    <axis xyz="0  0  1"/>
+    <limit effort="0" lower="0" upper="0" velocity="0"/>
+  </joint>
+  <link name="octanis1_rover_model__rover_body">
+    <inertial>
+      <mass value="1.0"/>
+      <origin rpy="0  0  0" xyz="0.15  0    0"/>
+      <inertia ixx="0.083" ixy="0.0" ixz="0.0" iyy="0.083" iyz="0.0" izz="0.083"/>
+    </inertial>
+    <collision name="octanis1_rover_model__collision">
+      <origin rpy="0  0  0" xyz="0.15  0    0"/>
+      <geometry>
+        <box size="0.3 0.3 0.15"/>
+      </geometry>
+    </collision>
+    <visual name="octanis1_rover_model__visual">
+      <origin rpy="0  0  0" xyz="0.15  0    0"/>
+      <geometry>
+        <box size="0.3 0.3 0.15"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="octanis1_rover_model__left_strut_out">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0  0  0" xyz="0    0   -0.01"/>
+      <inertia ixx="0.083" ixy="0.0" ixz="0.0" iyy="0.083" iyz="0.0" izz="0.083"/>
+    </inertial>
+    <collision name="octanis1_rover_model__collision">
+      <origin rpy="0  0  0" xyz="0    0   -0.01"/>
+      <geometry>
+        <mesh filename="package://meshes/Strut_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="octanis1_rover_model__visual">
+      <origin rpy="0  0  0" xyz="0    0   -0.01"/>
+      <geometry>
+        <mesh filename="package://meshes/Strut_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="octanis1_rover_model__left_strut_in">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0  0  0" xyz="0    0   -0.01"/>
+      <inertia ixx="0.083" ixy="0.0" ixz="0.0" iyy="0.083" iyz="0.0" izz="0.083"/>
+    </inertial>
+    <collision name="octanis1_rover_model__collision">
+      <origin rpy="0  0  0" xyz="0    0   -0.01"/>
+      <geometry>
+        <mesh filename="package://meshes/Strut_INNER_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="octanis1_rover_model__visual">
+      <origin rpy="0  0  0" xyz="0    0   -0.01"/>
+      <geometry>
+        <mesh filename="package://meshes/Strut_INNER_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="octanis1_rover_model__left_wheel_in">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0     -1.5707  0" xyz="0.242 -0.172  0.075"/>
+      <inertia ixx="0.083" ixy="0.0" ixz="0.0" iyy="0.083" iyz="0.0" izz="0.083"/>
+    </inertial>
+    <collision name="octanis1_rover_model__collision">
+      <origin rpy="0     -1.5707  0" xyz="0.242 -0.172  0.075"/>
+      <geometry>
+        <mesh filename="package://meshes/Wheel_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="octanis1_rover_model__visual">
+      <origin rpy="0     -1.5707  0" xyz="0.242 -0.172  0.075"/>
+      <geometry>
+        <mesh filename="package://meshes/Wheel_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="octanis1_rover_model__left_wheel_out">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0     -1.5707  0" xyz="0.242  0.172  0.075"/>
+      <inertia ixx="0.083" ixy="0.0" ixz="0.0" iyy="0.083" iyz="0.0" izz="0.083"/>
+    </inertial>
+    <collision name="octanis1_rover_model__collision">
+      <origin rpy="0     -1.5707  0" xyz="0.242  0.172  0.075"/>
+      <geometry>
+        <mesh filename="package://meshes/Wheel_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="octanis1_rover_model__visual">
+      <origin rpy="0     -1.5707  0" xyz="0.242  0.172  0.075"/>
+      <geometry>
+        <mesh filename="package://meshes/Wheel_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="octanis1_rover_model__right_strut_out">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0  0  0" xyz="0    0   -0.01"/>
+      <inertia ixx="0.083" ixy="0.0" ixz="0.0" iyy="0.083" iyz="0.0" izz="0.083"/>
+    </inertial>
+    <collision name="octanis1_rover_model__collision">
+      <origin rpy="0  0  0" xyz="0    0   -0.01"/>
+      <geometry>
+        <mesh filename="package://meshes/Strut_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="octanis1_rover_model__visual">
+      <origin rpy="0  0  0" xyz="0    0   -0.01"/>
+      <geometry>
+        <mesh filename="package://meshes/Strut_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="octanis1_rover_model__right_strut_in">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0  0  0" xyz="0    0   -0.01"/>
+      <inertia ixx="0.083" ixy="0.0" ixz="0.0" iyy="0.083" iyz="0.0" izz="0.083"/>
+    </inertial>
+    <collision name="octanis1_rover_model__collision">
+      <origin rpy="0  0  0" xyz="0    0   -0.01"/>
+      <geometry>
+        <mesh filename="package://meshes/Strut_INNER_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="octanis1_rover_model__visual">
+      <origin rpy="0  0  0" xyz="0    0   -0.01"/>
+      <geometry>
+        <mesh filename="package://meshes/Strut_INNER_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="octanis1_rover_model__right_wheel_in">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0      1.5707  0" xyz="-0.222 -0.172  0.075"/>
+      <inertia ixx="0.083" ixy="0.0" ixz="0.0" iyy="0.083" iyz="0.0" izz="0.083"/>
+    </inertial>
+    <collision name="octanis1_rover_model__collision">
+      <origin rpy="0      1.5707  0" xyz="-0.222 -0.172  0.075"/>
+      <geometry>
+        <mesh filename="package://meshes/Wheel_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="octanis1_rover_model__visual">
+      <origin rpy="0      1.5707  0" xyz="-0.222 -0.172  0.075"/>
+      <geometry>
+        <mesh filename="package://meshes/Wheel_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="octanis1_rover_model__right_wheel_out">
+    <inertial>
+      <mass value="0.1"/>
+      <origin rpy="0      1.5707  0" xyz="-0.222  0.172  0.075"/>
+      <inertia ixx="0.083" ixy="0.0" ixz="0.0" iyy="0.083" iyz="0.0" izz="0.083"/>
+    </inertial>
+    <collision name="octanis1_rover_model__collision">
+      <origin rpy="0      1.5707  0" xyz="-0.222  0.172  0.075"/>
+      <geometry>
+        <mesh filename="package://meshes/Wheel_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </collision>
+    <visual name="octanis1_rover_model__visual">
+      <origin rpy="0      1.5707  0" xyz="-0.222  0.172  0.075"/>
+      <geometry>
+        <mesh filename="package://meshes/Wheel_Rev_Umea_METERS.dae" scale="1.0 1.0 1.0"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>
